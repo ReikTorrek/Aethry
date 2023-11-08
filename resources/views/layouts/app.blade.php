@@ -12,8 +12,23 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <livewire:styles />
+    <style>
+        .block {
+            height: 25vh;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
 
+        .block:hover {
+            transform: scale(1.05);
+        }
+    </style>
+    <livewire:styles />
 </head>
 <body>
 @livewire('main-menu')

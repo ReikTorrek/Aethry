@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class MainMenu extends Component
@@ -21,6 +22,7 @@ class MainMenu extends Component
     public function mount()
     {
         if (auth()->check()) {
+            $this->authedItens['/profile'] = Auth::user()->name;
             foreach ($this->authedItens as $key => $item) {
                 $this->menuItems[$key] = $item;
             }

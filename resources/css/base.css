@@ -1,0 +1,17 @@
+* {
+    background-color: red;
+}
+.block {
+    height: 25vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.block:hover {
+    transform: scale(1.05);
+}
