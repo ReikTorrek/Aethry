@@ -32,7 +32,7 @@ Route::get('/dice', DiceRoller::class);
 Route::middleware('auth')->group(function () {
     Route::get('/profile', Profile::class);
     Route::get('/characters', Characters::class);
-    Route::get('/characters{id}', CharacterList::class);
+    Route::get('/characters/{id}', CharacterList::class);
     Route::get('/character_create', CharacterCreate::class);
     Route::get('/logout', [Logout::class, 'logout']);
 });
