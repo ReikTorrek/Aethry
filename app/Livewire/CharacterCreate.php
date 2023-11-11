@@ -66,7 +66,9 @@ class CharacterCreate extends Component
         $character = Character::create($validated);
         if ($character) {
             $characterTrait = CharacterTrait::create(['user_id' => $validated['user_id'], 'character_id' => $character->id, 'value' => $this->traits]);
-            $this->response = $validated['name'];
+            if ($characterTrait) {
+                $this->response = $validated['name'];
+            }
         }
     }
 }
