@@ -1,6 +1,7 @@
 <div class="container mt-5">
     <h2>Карточки персонажей</h2>
     <div class="row">
+        @if(@$this->characters[0])
             @foreach($characters as $key => $character)
             <div class="col-md-3 mb-4">
                     <div class="card">
@@ -13,6 +14,9 @@
                     </div>
             </div>
             @endforeach
+        @else
+            <p>У вас нет ни одного персонажа. <a href="/character_create">Создать</a></p>
+        @endif
         <!-- Repeat this card structure for each character -->
     </div>
 </div>
