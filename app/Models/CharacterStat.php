@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class CharacterStat extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'character_id',
+        'stat_id',
+        'value',
+    ];
 }

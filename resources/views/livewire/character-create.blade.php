@@ -45,6 +45,7 @@
             <label for="traits">Черты:</label>
             <textarea class="form-control" id="traits" rows="5" placeholder="Что персонаж любит, чего боится, и т.д." wire:model="traits"></textarea>
         </div>
+
         <button type="submit" class="btn btn-primary">Отправить</button>
     </form>
     @if($response)

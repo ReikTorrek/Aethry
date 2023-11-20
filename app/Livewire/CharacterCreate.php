@@ -11,6 +11,7 @@ use Livewire\Attributes\Layout;
 
 class CharacterCreate extends Component
 {
+    //TODO: add this data to DB
     public array $races = [
         'Человек',
         'Эльф',
