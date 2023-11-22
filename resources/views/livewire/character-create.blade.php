@@ -14,7 +14,7 @@
             <select class="form-control" id="race" wire:change="getSubRace" wire:model="race">
                 <option value="">Выбрать</option>
                 @foreach($races as $item)
-                    <option value="{{$item}}">{{$item}}</option>
+                    <option value="{{$item->id}}">{{$item->value}}</option>
                 @endforeach
             </select>
         </div>
@@ -24,7 +24,7 @@
             <select class="form-control" wire:model="sub_race">
                 <option value="">Выбрать</option>
                 @foreach($subRace as $item)
-                    <option value="{{$item}}">{{$item}}</option>
+                    <option value="{{$item->id}}">{{$item->value}}</option>
                 @endforeach
             </select>
         </div>
@@ -38,7 +38,7 @@
             <input type="text" class="form-control" id="experience" value="0" wire:model="current_exp">
         </div>
         <div class="form-group">
-            <label for="experience">Опыт на уровень:</label>
+            <label for="exp_to_level">Опыт на уровень:</label>
             <input type="text" class="form-control" id="exp_to_level" value="10" wire:model="exp_to_level">
         </div>
         <div class="form-group">
@@ -46,7 +46,7 @@
             <textarea class="form-control" id="traits" rows="5" placeholder="Что персонаж любит, чего боится, и т.д." wire:model="traits"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Отправить</button>
+        <button type="submit" class="btn btn-primary">Создать</button>
     </form>
     @if($response)
     <p>Персонаж {{ $name }} был успешно создан</p>
