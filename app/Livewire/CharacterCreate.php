@@ -4,6 +4,8 @@ namespace App\Livewire;
 
 use App\Models\Character;
 use App\Models\CharacterTrait;
+use App\Models\Race;
+use App\Models\SubRace;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
@@ -11,23 +13,8 @@ use Livewire\Attributes\Layout;
 
 class CharacterCreate extends Component
 {
-    //TODO: add this data to DB
-    public array $races = [
-        'Человек',
-        'Эльф',
-        'Гном',
-        'Дварф',
-        'Тифлинг',
-        'Зверолюд',
-    ];
-    public array $subRaces = [
-        'Человек' => [],
-        'Эльф' => ['Высший эльф', 'Лесной эльф', 'Дроу'],
-        'Гном' => [],
-        'Дварф' => [],
-        'Тифлинг' => ['Тифлинг демонов', 'Тифлинг грязнокровка'],
-        'Зверолюд' => ['Зверолюд птица', 'Зверолюд хищник', 'Травоядный зверолюд'],
-    ];
+    public array $races;
+    public array $subRaces;
     public array $subRace = [];
 
     public int $age;
@@ -41,6 +28,10 @@ class CharacterCreate extends Component
     public string $traits = '';
     public string $response = '';
 
+    public function boot()
+    {
+        $this->races = Race::all()->all();
+    }
     #[Layout('layouts.app')]
     public function render()
     {
@@ -49,7 +40,7 @@ class CharacterCreate extends Component
 
     public function getSubRace()
     {
-        $this->subRace = $this->subRaces[$this->race];
+        $this->subRace = SubRace::where('race_id', $this->race)->get()->all();
     }
 
     public function createCharacter() {
