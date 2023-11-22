@@ -19,8 +19,9 @@ class CharacterCreate extends Component
 
     public int $age;
     public int $level = 1;
-    public int $current_exp = 0;
-    public int $exp_to_level = 10;
+    public int $currentExp = 0;
+    public int $expToLevel = 10;
+    public int $summaryPoints = 32;
 
     public string $name = '';
     public string $race = '';
