@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('sub_races', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('race_id');
             $table->foreign('race_id')->references('id')->on('races')->onDelete('cascade');
             $table->text('value');
             $table->timestamps();

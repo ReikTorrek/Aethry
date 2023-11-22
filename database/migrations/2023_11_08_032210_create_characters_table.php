@@ -17,8 +17,8 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->text('name');
             $table->text('age');
-            $table->text('race');
-            $table->text('sub_race')->nullable();
+            $table->integer('race');
+            $table->integer('sub_race')->nullable();
             $table->integer('level')->default(1);
             $table->integer('current_exp')->default(0);
             $table->integer('exp_to_level')->default(10);
