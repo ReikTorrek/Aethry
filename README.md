@@ -12,6 +12,7 @@ To start this project you need:
 If you have troubles with starting a project you can
 1. try to manually write ports in docker-compose.yml
 2. delete unnecessary services
+
 If this does not help you, try to search your errors in google and write an issue on GitHub
 
 :3
