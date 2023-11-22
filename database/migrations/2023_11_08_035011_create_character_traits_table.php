@@ -17,7 +17,6 @@ return new class extends Migration
             $table->unsignedBigInteger('character_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('character_id')->references('id')->on('characters')->onDelete('cascade');
-            //$table->text('name');
             $table->text('value');
             $table->timestamps();
         });
