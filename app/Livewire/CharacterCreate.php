@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Character;
+use App\Models\Characteristic;
 use App\Models\CharacterTrait;
 use App\Models\Race;
 use App\Models\SubRace;
@@ -15,6 +16,7 @@ class CharacterCreate extends Component
 {
     public array $races;
     public array $subRaces;
+    public array $characteristics;
     public array $subRace = [];
 
     public int $age;
@@ -32,6 +34,7 @@ class CharacterCreate extends Component
     public function boot()
     {
         $this->races = Race::all()->all();
+        $this->characteristics = Characteristic::all()->all();
     }
     #[Layout('layouts.app')]
     public function render()
